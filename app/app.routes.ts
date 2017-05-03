@@ -2,12 +2,13 @@ import { Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NewNoteComponent } from './new_note.component';
+import { NotesListComponent } from './notes_list.component';
 
 
 //Array of paths
 export const routes: Routes = [
 //path= simple object
-{ path: '', redirectTo: 'home', pathMatch: 'full' },
-{ path: 'home', component: AppComponent },
-{ path: 'newnote', component: NewNoteComponent },
+{ path: '', redirectTo: 'notes_list', pathMatch: 'full' },
+{ path: 'notes_list', component: NotesListComponent },
+{ path: 'new_note', component: NewNoteComponent },
 ];

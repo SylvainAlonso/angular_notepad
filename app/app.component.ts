@@ -5,28 +5,17 @@ import { Component } from '@angular/core';
   //Allows to use this component in an other component (like a tag)
   selector: 'my-app',
   //where the graphical representation of the component is
-  templateUrl: `app/templates/app.component.html`,
+  template:`
+  <div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default" style="background-color: #BBD2E1;">
+            <b><a class="navbar-brand" >Notepad Application</a></b>
+            <a class="navbar-brand" routerLink="/notes_list">Home</a>
+            <a class="navbar-brand" routerLink="/new_note">Nouvelle note</a>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+</div>`
 })
-export class AppComponent  {
 
-    notes = [{
-        "title" : "première note",
-        "content" : "test",
-        "date" : "22/03",
-        "id" : 1,
-        "categorie" : {
-            "id" : 1,
-            "name" : "remarque"
-        }
-    }, {
-        "title" : "Seconde note",
-        "content" : "test numéro 2",
-        "date" : "22/04",
-        "id" : 2,
-        "categorie" : {
-            "id" : 2,
-            "name" : "to do"
-        }
-      }
-    ]
-}
+export class AppComponent  { }

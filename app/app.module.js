@@ -11,7 +11,8 @@ var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
 var app_routes_1 = require("./app.routes");
 var app_component_1 = require("./app.component");
-// import {NewNoteComponent} from './new_note.component';
+var new_note_component_1 = require("./new_note.component");
+var notes_list_component_1 = require("./notes_list.component");
 //Decorator to make the class a module
 var AppModule = (function () {
     function AppModule() {
@@ -23,7 +24,7 @@ AppModule = __decorate([
         //Import other modules which are using here
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(app_routes_1.routes)],
         //Property to declare what the module contains
-        declarations: [app_component_1.AppComponent, NewNoteComponent],
+        declarations: [app_component_1.AppComponent, new_note_component_1.NewNoteComponent, notes_list_component_1.NotesListComponent],
         //Bootstrap property because of that it is the module on which we boot
         bootstrap: [app_component_1.AppComponent]
     })

@@ -9,26 +9,6 @@ var core_1 = require("@angular/core");
 //Decorator to make the class a component
 var AppComponent = (function () {
     function AppComponent() {
-        this.notes = [{
-                "title": "première note",
-                "content": "test",
-                "date": "22/03",
-                "id": 1,
-                "categorie": {
-                    "id": 1,
-                    "name": "remarque"
-                }
-            }, {
-                "title": "Seconde note",
-                "content": "test numéro 2",
-                "date": "22/04",
-                "id": 2,
-                "categorie": {
-                    "id": 2,
-                    "name": "to do"
-                }
-            }
-        ];
     }
     return AppComponent;
 }());
@@ -37,7 +17,7 @@ AppComponent = __decorate([
         //Allows to use this component in an other component (like a tag)
         selector: 'my-app',
         //where the graphical representation of the component is
-        templateUrl: "app/templates/app.component.html",
+        template: "\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n        <nav class=\"navbar navbar-default\" style=\"background-color: #BBD2E1;\">\n            <b><a class=\"navbar-brand\" >Notepad Application</a></b>\n            <a class=\"navbar-brand\" routerLink=\"/notes_list\">Home</a>\n            <a class=\"navbar-brand\" routerLink=\"/new_note\">Nouvelle note</a>\n        </nav>\n    </div>\n    <router-outlet></router-outlet>\n</div>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
