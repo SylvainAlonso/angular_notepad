@@ -1,21 +1,33 @@
 <div class="container-fluid">
   <h2>Liste des notes</h2>
+  <!-- Display message of success/failure -->
+  <div *ngIf= "message != ''"  class="alert alert-success">
+    {{message}}
+  </div>
 
-  {{title}}
   <div *ngFor="let note of notes">
     <div class="well well-sm">
       <b>{{note.title}}</b><br>
-      <i>{{note.categorie.name}}</i> -
-      {{note.date}}
+      <i>{{note.category.name}}</i> <!-- BAAAAAAAAAAAAAAAAAD qd nouvelle cat-->
       <div style="background-color:white;">
         {{note.content}}<br><br>
       </div>
-      <a>
+      <button type="button" class="btn btn-lg btn-link" (click)='editNote(note)'>
         <span class="glyphicon glyphicon-edit" style="font-size:15px;color:#4682B4;"></span>
-      </a>
-      <a>
-        <span class="glyphicon glyphicon-remove" style="font-size:15px;color: #CD5C5C;"></span>
-      </a>
+      </button>
+      <button type="button" class="btn btn-lg btn-link" (click)='deleteNote(note)'>
+        <span class="glyphicon glyphicon-remove" style="color: #C9001A"></span>
+      </button>
+    </div>
+    <div *ngIf="note.edit">
+      <note-handler [note]="note" [categories]="categories" (saveNoteEvent)="saveNote($event)" ></note-handler>
     </div>
 	</div>
+  <button (click)="createNewNote = !createNewNote" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span>
+    Ajouter une note
+  </button>
+  <div [hidden]="createNewNote">
+    <note-handler  [note]="{}" [categories]="categories" (saveNoteEvent)="saveNote($event)"></note-handler >
+  </div>
 </div>

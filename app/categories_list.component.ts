@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { EditCategoryComponent } from './edit_category.component';
+
 
 @Component({
     selector : 'categories_list',

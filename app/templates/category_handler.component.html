@@ -5,7 +5,7 @@
     <div class="form-group">
       <label for="name">Nom:</label>
       <!--2ways data binding -->
-      <input type="text" class="form-control" [(ngModel)]="cat.name" [ngModelOptions]="{standalone: true}" >
+      <input type="text" class="form-control" [(ngModel)]="cat.name" [ngModelOptions]="{standalone: true}" required>
     </div>
     <button [disabled]="checkContent()" class="btn btn-primary" (click)="emitCat()" >Sauver</button>
   </form>

@@ -12,7 +12,7 @@ import { Component} from '@angular/core';
             <b><a class="navbar-brand" >Notepad Application</a></b>
             <a class="navbar-brand" routerLink="/notes_list">Notes</a>
             <a class="navbar-brand" routerLink="/categories_list">Categories</a>
-            <a class="navbar-brand" routerLink="/new_note">Ajouter une note</a>
+            <a class="navbar-brand" routerLink="/about">About</a>
 
         </nav>
     </div>

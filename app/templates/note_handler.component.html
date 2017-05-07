@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h4 *ngIf="note.id >0; else newNote">Modifier note</h4>
+  <ng-template #newNote><h4>Nouvelle note</h4></ng-template>
+  <form>
+    <div class="form-group">
+      <label for="title">Titre:</label>
+      <input type="text" class="form-control" [(ngModel)]="note.title" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="form-group">
+      <label for="content">Contenu:</label>
+      <textarea class="form-control" rows="4" [(ngModel)]="note.content" [ngModelOptions]="{standalone: true}" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="sel1">Catégorie:</label>
+      <select class="form-control" id="categorie">
+        <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+      </select>
+    </div>
+    <button [disabled]="checkContent()" class="btn btn-primary" (click)="emitNote()">Sauver</button>
+  </form>
+</div>

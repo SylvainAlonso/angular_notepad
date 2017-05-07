@@ -6,7 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-//import { FormGroup, FormControl } from '@angular/forms';
 var NotesListComponent = (function () {
     function NotesListComponent() {
         this.notes = [{
@@ -14,7 +13,8 @@ var NotesListComponent = (function () {
                 "content": "test",
                 "date": "22/03",
                 "id": 1,
-                "categorie": {
+                "edit": false,
+                "category": {
                     "id": 1,
                     "name": "remarque"
                 }
@@ -23,13 +23,55 @@ var NotesListComponent = (function () {
                 "content": "test numéro 2",
                 "date": "22/04",
                 "id": 2,
-                "categorie": {
+                "edit": false,
+                "category": {
                     "id": 2,
                     "name": "to do"
                 }
             }
         ];
+        this.categories = [{
+                "id": 1,
+                "name": "remarque",
+                "edit": false
+            }, {
+                "id": 2,
+                "name": "todo",
+                "edit": false
+            }, {
+                "id": 3,
+                "name": "nePasOublier",
+                "edit": false
+            }, {
+                "id": 4,
+                "name": "autre",
+                "edit": false
+            }];
+        this.createNewNote = true;
+        this.message = "";
     }
+    NotesListComponent.prototype.editNote = function (note) {
+        note.edit = true;
+    };
+    NotesListComponent.prototype.saveNote = function (note) {
+        if (note.id > 0) {
+            //Stop displaying note editor
+            note.edit = false;
+            this.message = "Modification enregistrée";
+        }
+        else {
+            this.notes.push(note);
+            //Stop displaying note editor
+            this.createNewNote = true;
+            this.message = "Nouvelle catégorie enregistrée";
+        }
+    };
+    NotesListComponent.prototype.deleteNote = function (note) {
+        var index = this.notes.findIndex(function (n) { return (n === note); });
+        if (index != -1) {
+            this.notes.splice(index, 1);
+        }
+    };
     return NotesListComponent;
 }());
 NotesListComponent = __decorate([
