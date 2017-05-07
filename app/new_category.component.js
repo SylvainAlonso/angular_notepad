@@ -6,20 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var NewNoteComponent = (function () {
-    function NewNoteComponent() {
-        this.categories = ['todo', 'remarque', 'ne pas oublier', 'autre'];
+var NewCategoryComponent = (function () {
+    function NewCategoryComponent() {
     }
-    NewNoteComponent.prototype.createNewNote = function (note) {
-        this.notes.push(note);
-    };
-    return NewNoteComponent;
+    return NewCategoryComponent;
 }());
-NewNoteComponent = __decorate([
+NewCategoryComponent = __decorate([
     core_1.Component({
-        selector: 'new-note',
-        templateUrl: 'app/templates/new_note.component.html',
+        selector: 'new-category',
+        templateUrl: 'app/templates/new_category.component.html',
     })
-], NewNoteComponent);
-exports.NewNoteComponent = NewNoteComponent;
-//# sourceMappingURL=new_note.component.js.map
+], NewCategoryComponent);
+exports.NewCategoryComponent = NewCategoryComponent;
+//# sourceMappingURL=new_category.component.js.map

@@ -1,0 +1,58 @@
+<html>
+    <body>
+    <div class="container-fluid">
+      <h2>Liste des catégories</h2>
+      <div *ngIf= "message != ''"  class="alert alert-success">
+        {{message}}
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-1">
+          <h4>ID</h4>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-4">
+          <h4>Nom</h4>
+        </div>
+      </div>
+      <div *ngFor="let category of categories; let i = index">
+        <div class="row">
+          <legend>
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-1" style="color:#A9A9A9">
+              {{category.id}}
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-4" style="color:#A9A9A9">
+              {{category.name}}
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-1" >
+              <!-- Set the boolean category.edit to true for the correct category when clicking -->
+              <button type="button" class="btn btn-lg btn-link" (click)='editCategory(category)'>
+                <span class="glyphicon glyphicon-edit" style="color:#A9A9A9" ></span>
+              </button>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" >
+              <button type="button" class="btn btn-lg btn-link">
+                <span class="glyphicon glyphicon-remove" style="color: #C9001A"></span>
+              </button>
+            </div>
+          </legend>
+        </div>
+        <!-- Boolean category.edit must be true to display the category editor only for the corresponding category-->
+        <div *ngIf="category.edit">
+          <!-- Injecting content (category) into the child component EditCategoryComponent -->
+          <edit-category [cat]="category"> </edit-category>
+        </div>
+      </div>
+      <!-- Invert the boolean createNewCat when we click-->
+      <button (click)="createNewCat = !createNewCat" class="btn btn-secundary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Ajouter une catégorie
+      </button>
+
+      <div [hidden]="createNewCat">
+        <!-- 1. Injecting content (category) into the child component EditCategoryComponent
+             2. Custom event saveCatEvent (create in the child component) -> call onSaveCat() when it appears
+                (Event binding: (Event that we will listen to) = "event handler")-->
+        <edit-category [cat]="{}" (saveCatEvent)="saveCat($event)"> </edit-category>
+      </div>
+    </div>
+  </body>
+</html>

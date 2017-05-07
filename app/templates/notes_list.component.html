@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container-fluid">
   <h2>Liste des notes</h2>
 
+  {{title}}
   <div *ngFor="let note of notes">
     <div class="well well-sm">
       <b>{{note.title}}</b><br>
