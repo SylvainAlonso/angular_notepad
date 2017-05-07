@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <h2 *ngIf="cat.id >0; else newCat">Modifier catégorie</h2>
-  <ng-template #newCat><h2>Nouvelle catégorie</h2></ng-template>
+  <h4 *ngIf="cat.id >0; else newCat">Modifier catégorie</h4>
+  <ng-template #newCat><h4>Nouvelle catégorie</h4></ng-template>
   <form>
     <div class="form-group">
       <label for="name">Nom:</label>

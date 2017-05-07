@@ -9,39 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var EditCategoryComponent = (function () {
-    function EditCategoryComponent() {
+var CategoryHandlerComponent = (function () {
+    function CategoryHandlerComponent() {
         //Creation of a custom event saveCatEvent to be able to communicate from the child to the parent (CategoriesListComponent)
         this.saveCatEvent = new core_1.EventEmitter();
     }
-    EditCategoryComponent.prototype.ngOnInit = function () {
+    CategoryHandlerComponent.prototype.ngOnInit = function () {
     };
     //Event emitter that sends the object cat to te parent
-    EditCategoryComponent.prototype.emitCat = function () {
+    CategoryHandlerComponent.prototype.emitCat = function () {
         this.saveCatEvent.emit(this.cat);
     };
     //Disabled save button when the name does not contain at least 4 characters
-    EditCategoryComponent.prototype.checkContent = function () {
-        if (this.cat && this.cat.name && this.cat.name.length > 4) {
+    CategoryHandlerComponent.prototype.checkContent = function () {
+        if (this.cat && this.cat.name && this.cat.name.length >= 4) {
             return false;
         }
         return true;
     };
-    return EditCategoryComponent;
+    return CategoryHandlerComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], EditCategoryComponent.prototype, "cat", void 0);
+], CategoryHandlerComponent.prototype, "cat", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
-], EditCategoryComponent.prototype, "saveCatEvent", void 0);
-EditCategoryComponent = __decorate([
+], CategoryHandlerComponent.prototype, "saveCatEvent", void 0);
+CategoryHandlerComponent = __decorate([
     core_1.Component({
-        selector: 'edit-category',
-        templateUrl: 'app/templates/edit_category.component.html',
+        selector: 'category-handler',
+        templateUrl: 'app/templates/category_handler.component.html',
     })
-], EditCategoryComponent);
-exports.EditCategoryComponent = EditCategoryComponent;
-//# sourceMappingURL=edit_category.component.js.map
+], CategoryHandlerComponent);
+exports.CategoryHandlerComponent = CategoryHandlerComponent;
+//# sourceMappingURL=category_handler.component.js.map

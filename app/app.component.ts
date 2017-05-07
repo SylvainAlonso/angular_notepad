@@ -13,7 +13,6 @@ import { Component} from '@angular/core';
             <a class="navbar-brand" routerLink="/notes_list">Notes</a>
             <a class="navbar-brand" routerLink="/categories_list">Categories</a>
             <a class="navbar-brand" routerLink="/new_note">Ajouter une note</a>
-            <a class="navbar-brand" routerLink="/new_category">Ajouter une catégorie</a>
 
         </nav>
     </div>

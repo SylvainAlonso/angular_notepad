@@ -29,14 +29,28 @@ var CategoriesListComponent = (function () {
         this.message = "";
     }
     //Method for set the boolean category.edit to true for the correct category when clicking
-    CategoriesListComponent.prototype.editCategory = function (category) {
+    CategoriesListComponent.prototype.editCat = function (category) {
         category.edit = true;
     };
     //Method to save category in DB
-    CategoriesListComponent.prototype.saveCat = function (category) {
-        this.categories.push(category);
-        this.createNewCat = true;
-        this.message = "Catégorie ajoutée";
+    CategoriesListComponent.prototype.saveCat = function (cat) {
+        if (cat.id > 0) {
+            //Stop displaying category editor
+            cat.edit = false;
+            this.message = "Modification enregistrée";
+        }
+        else {
+            this.categories.push(cat);
+            //Stop displaying category editor
+            this.createNewCat = true;
+            this.message = "Nouvelle catégorie enregistrée";
+        }
+    };
+    CategoriesListComponent.prototype.deleteCat = function (cat) {
+        var index = this.categories.findIndex(function (n) { return (n === cat); });
+        if (index != -1) {
+            this.categories.splice(index, 1);
+        }
     };
     return CategoriesListComponent;
 }());

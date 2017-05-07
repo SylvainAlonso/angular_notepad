@@ -17,7 +17,7 @@ AppComponent = __decorate([
         //Allows to use this component in an other component (like a tag)
         selector: 'my-app',
         //where the graphical representation of the component is
-        template: "\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n        <nav class=\"navbar navbar-default\" style=\"background-color: #BBD2E1;\">\n            <b><a class=\"navbar-brand\" >Notepad Application</a></b>\n            <a class=\"navbar-brand\" routerLink=\"/notes_list\">Notes</a>\n            <a class=\"navbar-brand\" routerLink=\"/categories_list\">Categories</a>\n            <a class=\"navbar-brand\" routerLink=\"/new_note\">Ajouter une note</a>\n            <a class=\"navbar-brand\" routerLink=\"/new_category\">Ajouter une cat\u00E9gorie</a>\n\n        </nav>\n    </div>\n    <router-outlet></router-outlet>\n</div>"
+        template: "\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n        <nav class=\"navbar navbar-default\" style=\"background-color: #BBD2E1;\">\n            <b><a class=\"navbar-brand\" >Notepad Application</a></b>\n            <a class=\"navbar-brand\" routerLink=\"/notes_list\">Notes</a>\n            <a class=\"navbar-brand\" routerLink=\"/categories_list\">Categories</a>\n            <a class=\"navbar-brand\" routerLink=\"/new_note\">Ajouter une note</a>\n\n        </nav>\n    </div>\n    <router-outlet></router-outlet>\n</div>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
