@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h2>Liste des catégories</h2>
       <!-- Display message of success/failure -->
-      <div *ngIf= "message != ''"  class="alert alert-success">
+      <div *ngIf= "message != ''"  [class]="result">
         {{message}}
       </div>
       <div class="row">

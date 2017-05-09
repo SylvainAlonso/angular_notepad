@@ -1,14 +1,14 @@
 <div class="container-fluid">
   <h2>Liste des notes</h2>
   <!-- Display message of success/failure -->
-  <div *ngIf= "message != ''"  class="alert alert-success">
+  <div *ngIf= "message" != ' ' class= "alert alert-danger">
     {{message}}
   </div>
 
   <div *ngFor="let note of notes">
     <div class="well well-sm">
       <b>{{note.title}}</b><br>
-      <i>{{note.category.name}}</i> <!-- BAAAAAAAAAAAAAAAAAD qd nouvelle cat-->
+      <i>{{note.category.name}}</i>
       <div style="background-color:white;">
         {{note.content}}<br><br>
       </div>
