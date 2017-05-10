@@ -9,7 +9,7 @@ import { Component} from '@angular/core';
   <div class="container-fluid">
     <div class="row">
         <nav class="navbar navbar-default" style="background-color: #BBD2E1;">
-            <b><a class="navbar-brand" >Notepad Application</a></b>
+            <b><a class="navbar-brand" >Notepad Application (Angular2)</a></b>
             <a class="navbar-brand" routerLink="/notes_list">Notes</a>
             <a class="navbar-brand" routerLink="/categories_list">Categories</a>
             <a class="navbar-brand" routerLink="/about">About</a>

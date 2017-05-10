@@ -17,6 +17,7 @@ var CategoriesListComponent = (function () {
         this.message = "";
         this.result = "";
     }
+    ;
     CategoriesListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.categoryService.getCategories().subscribe(function (data) { _this.categories = JSON.parse(data); }, function (err) { return console.log(err); }, function () { return console.log('categories charged'); });

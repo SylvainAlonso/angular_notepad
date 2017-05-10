@@ -14,7 +14,7 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
-        template: "\n    <div class=\"well well-lg\">\n        <div class=\"row\">\n            R\u00E9alisation de l'app Notepad dans le cadre du cours d'Application et service web (2I4090).<br><br>\n            Cette derni\u00E8re offre la possibilit\u00E9 de stocker des notes en base de donn\u00E9es via l'API Symphony. <br>\n            Chaque note comprend un titre, un contenu et une cat\u00E9gorie.<br>\n            Toute \u00E9dition ou cr\u00E9ation de note/cat\u00E9gorie se fait dans l'onglet correspondant de la navbar.\n        </div>\n    </div>\n    "
+        template: "\n    <div class=\"well well-lg\">\n        <div class=\"row\">\n            R\u00E9alisation de l'app <b>Notepad</b> dans le cadre du cours d'Application et service web (2I4090).<br><br>\n            Cette derni\u00E8re permet:<br>\n            <p style=\"margin-left: 25px;\">\n              - de lister les notes;<br>\n              - d\u2019ajouter une note li\u00E9e \u00E0 une cat\u00E9gorie;<br>\n              - d\u2019effacer une note;<br>\n              - de modifier une note;<br>\n              - de lister les cat\u00E9gories;<br>\n              - de modifier une cat\u00E9gorie;<br>\n              - d'effacer une cat\u00E9gorie.<br>\n            </p>\n\n            Chaque note comprend un titre, un contenu et une cat\u00E9gorie.<br>\n            Toute \u00E9dition ou cr\u00E9ation de note/cat\u00E9gorie se fait dans l'onglet correspondant de la navbar.\n        </div>\n    </div>\n    "
     })
 ], AboutComponent);
 exports.AboutComponent = AboutComponent;

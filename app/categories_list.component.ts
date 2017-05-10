@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+
 import { CategoryService } from './category.service';
 import { Category } from './category'
 
@@ -10,7 +11,7 @@ import { Category } from './category'
 
 export class CategoriesListComponent {
 
-  categories: Category[];
+  categories: any[];;
   createNewCat: boolean = true;
   message: string ="";
   result: string ="";
