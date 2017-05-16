@@ -17,6 +17,7 @@ export class NotesListComponent {
 
   createNewNote: boolean = true;
   message: string ="";
+  result: string ="";
 
   constructor(private noteService: NoteService, private categoryService: CategoryService) { }
 
@@ -52,7 +53,7 @@ export class NotesListComponent {
       );
       //Stop displaying note editor
       this.createNewNote = true;
-      this.message="Nouvelle catégorie enregistrée";
+      this.message="Nouvelle note enregistrée";
     }
   }
 
@@ -78,9 +79,9 @@ export class NotesListComponent {
       this.message="Modification enregistrée";
     }
     else if(type == "delnote"){
-      this.message="Catégorie supprimée";
+      this.message="Note supprimée";
     }else{
-      this.message="Nouvelle catégorie enregistrée";
+      this.message="Nouvelle note enregistrée";
     }
 
   }
